@@ -2,194 +2,212 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FF4f00"
     tools:context="com.example.android.bajajhome.Login.LoginActivity">
 
-    <LinearLayout
-        android:id="@+id/layout_id_0"
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="32dp"
-        android:orientation="horizontal">
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_home_black_24dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="BAJAJ HOME"
-            android:textSize="35sp"
-            android:textStyle="bold"
-            android:layout_marginLeft="16dp"
-            android:gravity="center"
-            android:textColor="@android:color/white"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_id_1"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/layout_id_0"
-        android:layout_margin="16dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:id="@+id/layout">
 
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/email_text_input_layout"
+        <LinearLayout
+            android:id="@+id/layout_id_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="32dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_home_black_24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="BAJAJ HOME"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="16dp"
+                android:gravity="center"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_id_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/TextLabel">
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/layout_id_0"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/email_id"
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/email_text_input_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
-                android:textColor="@android:color/white" />
+                android:theme="@style/TextLabel">
 
-        </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/email_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@android:color/white" />
+
+            </android.support.design.widget.TextInputLayout>
 
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/etPasswordLayout"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/etPasswordLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLabel">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:textColor="@android:color/white"
+                    app:passwordToggleDrawable="@drawable/ic_visibility"
+                    app:passwordToggleEnabled="true"/>
+            </android.support.design.widget.TextInputLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/sign_in"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/rounded_button"
+                    android:paddingLeft="72dp"
+                    android:paddingRight="72dp"
+                    android:text="SIGN me IN" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_id_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/TextLabel">
+            android:orientation="vertical"
+            android:layout_below="@id/layout_id_1">
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/password"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:textColor="@android:color/white"
-                app:passwordToggleDrawable="@drawable/ic_visibility"
-                app:passwordToggleEnabled="true"/>
-        </android.support.design.widget.TextInputLayout>
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                android:text="New User?"
+                android:gravity="center"
+                android:textColor="@android:color/white"/>
 
             <Button
-                android:id="@+id/sign_in"
+                android:id="@+id/sign_up"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="22dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginTop="4dp"
                 android:background="@drawable/rounded_button"
-                android:paddingLeft="72dp"
-                android:paddingRight="72dp"
-                android:text="SIGN me IN" />
-        </RelativeLayout>
-    </LinearLayout>
-
-   <LinearLayout
-       android:id="@+id/layout_id_2"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:orientation="vertical"
-       android:layout_below="@id/layout_id_1">
-
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="New User?"
-           android:gravity="center"
-           android:textColor="@android:color/white"/>
-
-       <Button
-           android:id="@+id/sign_up"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="4dp"
-           android:background="@drawable/rounded_button"
-           android:gravity="center"
-           android:layout_marginLeft="46dp"
-           android:layout_marginRight="46dp"
-           android:text="SIGN UP" />
+                android:gravity="center"
+                android:layout_marginLeft="46dp"
+                android:layout_marginRight="46dp"
+                android:text="SIGN UP" />
 
 
 
-   </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/layout_id_3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/layout_id_2"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal">
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="2dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="4dp"
+        <LinearLayout
+            android:id="@+id/layout_id_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_id_2"
             android:layout_marginTop="8dp"
-            android:layout_weight="1"
-            android:background="@android:color/white" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@android:color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OR CONTINUE WITH"
+                android:textColor="@android:color/white" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@android:color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_id_4"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="OR CONTINUE WITH"
-            android:textColor="@android:color/white" />
+            android:orientation="horizontal"
+            android:layout_below="@+id/layout_id_3">
+            <Button
+                android:id="@+id/sign_in_facebook"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_fb"
+                android:gravity="center"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="16dp"
+                android:text="FACEBOOK"
+                android:textColor="@android:color/white"/>
+            <Button
+                android:id="@+id/sign_in_google"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/rounded_button"
+                android:gravity="center"
+                android:text="GOOGLE"
+                android:textColor="#d34836"/>
+        </LinearLayout>
+    </RelativeLayout>
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="2dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1"
-            android:background="@android:color/white" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_id_4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/layout_id_3">
-        <Button
-            android:id="@+id/sign_in_facebook"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/rounded_fb"
-            android:gravity="center"
-            android:layout_marginRight="8dp"
-            android:layout_marginLeft="16dp"
-            android:text="FACEBOOK"
-            android:textColor="@android:color/white"/>
-        <Button
-            android:id="@+id/sign_in_google"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginLeft="8dp"
-            android:background="@drawable/rounded_button"
-            android:gravity="center"
-            android:text="GOOGLE"
-            android:textColor="#d34836"/>
-    </LinearLayout>
 
 </RelativeLayout>
