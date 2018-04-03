@@ -134,7 +134,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Intent i = new Intent(LoginActivity.this, BluetoothActivity.class);
+                            Intent i = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(i);
                             finish();
                             Log.d(TAG, "signInWithCredential:success");
@@ -167,7 +167,7 @@ public class LoginActivity extends AppCompatActivity {
                             Log.d(TAG, "signInWithEmail:success");
                             user = mAuth.getCurrentUser();
                             if(user!=null) {
-                                Intent i = new Intent(LoginActivity.this,BluetoothActivity.class);
+                                Intent i = new Intent(LoginActivity.this,MainActivity.class);
                                 startActivity(i);
                                 finish();
                             }

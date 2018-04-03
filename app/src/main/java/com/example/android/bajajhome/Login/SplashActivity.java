@@ -36,7 +36,7 @@ public class SplashActivity extends AppCompatActivity {
                 // This method will be executed once the timer is over
                 // Start your app main activity
                 if(FirebaseAuth.getInstance().getCurrentUser()!= null){
-                    Intent i = new Intent(SplashActivity.this, BluetoothActivity.class);
+                    Intent i = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(i);
                     finish();
                 }
